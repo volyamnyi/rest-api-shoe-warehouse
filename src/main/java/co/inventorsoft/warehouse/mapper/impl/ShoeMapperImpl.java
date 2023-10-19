@@ -1,8 +1,8 @@
-package co.inventorsoft.warehouse.mappers.impl;
+package co.inventorsoft.warehouse.mapper.impl;
 
 import co.inventorsoft.warehouse.domain.dto.ShoeDto;
-import co.inventorsoft.warehouse.domain.entities.ShoeEntity;
-import co.inventorsoft.warehouse.mappers.Mapper;
+import co.inventorsoft.warehouse.domain.entity.ShoeEntity;
+import co.inventorsoft.warehouse.mapper.Mapper;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;

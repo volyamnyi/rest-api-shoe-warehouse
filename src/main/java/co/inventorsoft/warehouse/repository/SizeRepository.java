@@ -1,6 +1,6 @@
-package co.inventorsoft.warehouse.repositories;
+package co.inventorsoft.warehouse.repository;
 
-import co.inventorsoft.warehouse.domain.entities.SizeEntity;
+import co.inventorsoft.warehouse.domain.entity.SizeEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

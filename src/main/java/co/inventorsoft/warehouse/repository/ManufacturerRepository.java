@@ -1,6 +1,6 @@
-package co.inventorsoft.warehouse.repositories;
+package co.inventorsoft.warehouse.repository;
 
-import co.inventorsoft.warehouse.domain.entities.ManufacturerEntity;
+import co.inventorsoft.warehouse.domain.entity.ManufacturerEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

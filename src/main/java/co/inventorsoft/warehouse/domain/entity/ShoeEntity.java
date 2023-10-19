@@ -1,7 +1,6 @@
-package co.inventorsoft.warehouse.domain.entities;
+package co.inventorsoft.warehouse.domain.entity;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,7 +23,6 @@ public class ShoeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shoe_id_seq")
-    @Column(unique = true)
     Long id;
     private String type;
 

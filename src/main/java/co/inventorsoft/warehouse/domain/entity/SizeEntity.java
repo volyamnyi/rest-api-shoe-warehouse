@@ -1,4 +1,4 @@
-package co.inventorsoft.warehouse.domain.entities;
+package co.inventorsoft.warehouse.domain.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -13,11 +13,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "manufacturers")
-public class ManufacturerEntity {
+@Table(name = "sizes")
+public class SizeEntity {
 
     @Id
     private Long id;
-    private String name;
-
+    private Integer size;
+    private Integer stock;
 }

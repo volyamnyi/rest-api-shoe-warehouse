@@ -1,6 +1,5 @@
 package co.inventorsoft.warehouse.domain.dto;
 
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,13 +16,7 @@ public class ShoeDto {
 
     @NotNull
     private String type;
-
-    @NotNull
-    @Valid
     private ManufacturerDto manufacturer;
-
-    @NotNull
-    @Valid
     private SizeDto size;
 
 }

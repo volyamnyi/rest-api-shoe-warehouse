@@ -1,18 +1,13 @@
 package co.inventorsoft.warehouse;
 
-import co.inventorsoft.warehouse.services.FillDatabaseService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class RestApiShoeWarehouseApplication {
 
     public static void main(String[] args) {
-
-        ConfigurableApplicationContext context = SpringApplication.run(RestApiShoeWarehouseApplication.class, args);
-        FillDatabaseService dataSource = context.getBean("fillDatabaseService", FillDatabaseService.class);
-        dataSource.generateData();
+        SpringApplication.run(RestApiShoeWarehouseApplication.class, args);
     }
 
 }
