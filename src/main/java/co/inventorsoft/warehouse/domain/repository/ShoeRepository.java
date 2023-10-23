@@ -1,4 +1,4 @@
-package co.inventorsoft.warehouse.repository;
+package co.inventorsoft.warehouse.domain.repository;
 
 import co.inventorsoft.warehouse.domain.entity.ShoeEntity;
 import org.springframework.data.jpa.repository.Query;

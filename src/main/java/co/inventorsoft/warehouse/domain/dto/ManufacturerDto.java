@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class ManufacturerDto {
-
     Long id;
 
     @NotNull

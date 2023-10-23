@@ -1,7 +1,7 @@
-package co.inventorsoft.warehouse.controller;
+package co.inventorsoft.warehouse.domain.controller;
 
 import co.inventorsoft.warehouse.domain.dto.ShoeDto;
-import co.inventorsoft.warehouse.service.ShoeService;
+import co.inventorsoft.warehouse.domain.service.ShoeService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -49,8 +49,7 @@ public class ShoeController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ShoeDto createNewShoe(@RequestBody @Valid ShoeDto shoeDto) {
-        return shoeService.
-                save(shoeDto);
+        return shoeService.save(shoeDto);
     }
 
     @PutMapping("/{id}")

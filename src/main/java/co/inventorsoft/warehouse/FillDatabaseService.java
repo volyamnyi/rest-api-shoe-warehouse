@@ -1,17 +1,23 @@
-package co.inventorsoft.warehouse.service;
+package co.inventorsoft.warehouse;
 
 import co.inventorsoft.warehouse.domain.entity.ManufacturerEntity;
 import co.inventorsoft.warehouse.domain.entity.ShoeEntity;
 import co.inventorsoft.warehouse.domain.entity.SizeEntity;
-import co.inventorsoft.warehouse.repository.ManufacturerRepository;
-import co.inventorsoft.warehouse.repository.ShoeRepository;
-import co.inventorsoft.warehouse.repository.SizeRepository;
+import co.inventorsoft.warehouse.domain.repository.ManufacturerRepository;
+import co.inventorsoft.warehouse.domain.repository.ShoeRepository;
+import co.inventorsoft.warehouse.domain.repository.SizeRepository;
+import co.inventorsoft.warehouse.security.entity.RoleEntity;
+import co.inventorsoft.warehouse.security.entity.UserEntity;
+import co.inventorsoft.warehouse.security.repository.RoleRepository;
+import co.inventorsoft.warehouse.security.repository.UserRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -22,8 +28,16 @@ public class FillDatabaseService {
     private final ShoeRepository shoeRepository;
     private final SizeRepository sizeRepository;
 
+    private final RoleRepository roleRepository;
+    private final UserRepository userRepository;
+
     @PostConstruct
     public void generateData() {
+        generateDomainData();
+        generateUserData();
+    }
+
+    private void generateDomainData() {
         ManufacturerEntity nike = createManufacturer(1L, "Nike");
         ManufacturerEntity adidas = createManufacturer(2L, "Adidas");
         ManufacturerEntity puma = createManufacturer(3L, "Puma");
@@ -51,6 +65,41 @@ public class FillDatabaseService {
 
         saveEntities(nike2, adidas2, puma2);
         saveEntities(size4011, size4012, size4013);
+
+    }
+
+    private void generateUserData() {
+        RoleEntity roleUser1 = RoleEntity.builder()
+                .id(1L)
+                .name("ROLE_USER")
+                .build();
+
+        RoleEntity roleAdmin = RoleEntity.builder()
+                .id(2L)
+                .name("ROLE_ADMIN")
+                .build();
+        Collection<RoleEntity> roleEntityCollection1 = List.of(roleUser1);
+        Collection<RoleEntity> roleEntityCollection2 = List.of(roleAdmin);
+
+        UserEntity user1 = UserEntity.builder()
+                .id(1L)
+                .username("user1")
+                .email("user1@email.com")
+                .password("user1password")
+                .roleEntity(roleEntityCollection1)
+                .build();
+
+        UserEntity admin = UserEntity.builder()
+                .id(2L)
+                .username("admin")
+                .email("admin@email.com")
+                .password("adminpassword")
+                .roleEntity(roleEntityCollection2)
+                .build();
+
+
+        saveEntities(roleUser1, roleAdmin);
+        saveEntities(user1, admin);
 
 
     }
@@ -89,4 +138,14 @@ public class FillDatabaseService {
     private void saveEntities(ShoeEntity... shoes) {
         shoeRepository.saveAll(Arrays.asList(shoes));
     }
+
+    private void saveEntities(RoleEntity... roles) {
+        roleRepository.saveAll(Arrays.asList(roles));
+    }
+
+    private void saveEntities(UserEntity... users) {
+        userRepository.saveAll(Arrays.asList(users));
+    }
+
+
 }

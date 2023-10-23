@@ -1,4 +1,4 @@
-package co.inventorsoft.warehouse.mapper;
+package co.inventorsoft.warehouse.domain.mapper;
 
 public interface Mapper<A, B> {
 

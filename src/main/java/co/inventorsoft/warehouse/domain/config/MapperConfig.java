@@ -1,4 +1,4 @@
-package co.inventorsoft.warehouse.config;
+package co.inventorsoft.warehouse.domain.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

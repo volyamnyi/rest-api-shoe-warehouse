@@ -1,4 +1,4 @@
-package co.inventorsoft.warehouse.domain.dto;
+package co.inventorsoft.warehouse.security.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class SizeDto {
-    Long id;
-    private Integer size;
-    private Integer stock;
+public class JwtRequestDto {
+    private String username;
+    private String password;
+
 }

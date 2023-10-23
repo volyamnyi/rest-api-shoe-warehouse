@@ -1,4 +1,4 @@
-package co.inventorsoft.warehouse.repository;
+package co.inventorsoft.warehouse.domain.repository;
 
 import co.inventorsoft.warehouse.domain.entity.SizeEntity;
 import org.springframework.data.repository.CrudRepository;

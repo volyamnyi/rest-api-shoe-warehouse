@@ -1,4 +1,4 @@
-package co.inventorsoft.warehouse.service;
+package co.inventorsoft.warehouse.domain.service;
 
 import co.inventorsoft.warehouse.domain.dto.ShoeDto;
 import org.springframework.stereotype.Service;

@@ -1,14 +1,14 @@
-package co.inventorsoft.warehouse.service.impl;
+package co.inventorsoft.warehouse.domain.service.impl;
 
 import co.inventorsoft.warehouse.domain.dto.ShoeDto;
 import co.inventorsoft.warehouse.domain.entity.ManufacturerEntity;
 import co.inventorsoft.warehouse.domain.entity.ShoeEntity;
 import co.inventorsoft.warehouse.domain.entity.SizeEntity;
-import co.inventorsoft.warehouse.mapper.Mapper;
-import co.inventorsoft.warehouse.repository.ManufacturerRepository;
-import co.inventorsoft.warehouse.repository.ShoeRepository;
-import co.inventorsoft.warehouse.repository.SizeRepository;
-import co.inventorsoft.warehouse.service.ShoeService;
+import co.inventorsoft.warehouse.domain.mapper.Mapper;
+import co.inventorsoft.warehouse.domain.repository.ManufacturerRepository;
+import co.inventorsoft.warehouse.domain.repository.ShoeRepository;
+import co.inventorsoft.warehouse.domain.repository.SizeRepository;
+import co.inventorsoft.warehouse.domain.service.ShoeService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
