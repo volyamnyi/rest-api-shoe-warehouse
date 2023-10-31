@@ -1,4 +1,4 @@
-package co.inventorsoft.warehouse.domain.service.impl;
+package co.inventorsoft.warehouse.domain.service;
 
 import co.inventorsoft.warehouse.domain.dto.ShoeDto;
 import co.inventorsoft.warehouse.domain.entity.ManufacturerEntity;
@@ -8,7 +8,6 @@ import co.inventorsoft.warehouse.domain.mapper.Mapper;
 import co.inventorsoft.warehouse.domain.repository.ManufacturerRepository;
 import co.inventorsoft.warehouse.domain.repository.ShoeRepository;
 import co.inventorsoft.warehouse.domain.repository.SizeRepository;
-import co.inventorsoft.warehouse.domain.service.ShoeService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -110,6 +109,5 @@ public class ShoeServiceImpl implements ShoeService {
     public void delete() {
         shoeRepository.deleteAll();
     }
-
 
 }

@@ -31,6 +31,29 @@ public class FillDatabaseService {
     private final RoleRepository roleRepository;
     private final UserRepository userRepository;
 
+    public static ManufacturerEntity createManufacturer(long id, String name) {
+        return ManufacturerEntity.builder()
+                .id(id)
+                .name(name)
+                .build();
+    }
+
+    public static SizeEntity createSize(long id, int size, int stock) {
+        return SizeEntity.builder()
+                .id(id)
+                .size(size)
+                .stock(stock)
+                .build();
+    }
+
+    public static ShoeEntity createShoe(String type, ManufacturerEntity manufacturer, SizeEntity size) {
+        return ShoeEntity.builder()
+                .type(type)
+                .manufacturer(manufacturer)
+                .size(size)
+                .build();
+    }
+
     @PostConstruct
     public void generateData() {
         generateDomainData();
@@ -70,19 +93,16 @@ public class FillDatabaseService {
 
     private void generateUserData() {
         RoleEntity roleUser1 = RoleEntity.builder()
-                .id(1L)
                 .name("ROLE_USER")
                 .build();
 
         RoleEntity roleAdmin = RoleEntity.builder()
-                .id(2L)
                 .name("ROLE_ADMIN")
                 .build();
         Collection<RoleEntity> roleEntityCollection1 = List.of(roleUser1);
         Collection<RoleEntity> roleEntityCollection2 = List.of(roleAdmin);
 
         UserEntity user1 = UserEntity.builder()
-                .id(1L)
                 .username("user1")
                 .email("user1@email.com")
                 .password("user1password")
@@ -90,7 +110,6 @@ public class FillDatabaseService {
                 .build();
 
         UserEntity admin = UserEntity.builder()
-                .id(2L)
                 .username("admin")
                 .email("admin@email.com")
                 .password("adminpassword")
@@ -102,29 +121,6 @@ public class FillDatabaseService {
         saveEntities(user1, admin);
 
 
-    }
-
-    private ManufacturerEntity createManufacturer(long id, String name) {
-        return ManufacturerEntity.builder()
-                .id(id)
-                .name(name)
-                .build();
-    }
-
-    private SizeEntity createSize(long id, int size, int stock) {
-        return SizeEntity.builder()
-                .id(id)
-                .size(size)
-                .stock(stock)
-                .build();
-    }
-
-    private ShoeEntity createShoe(String type, ManufacturerEntity manufacturer, SizeEntity size) {
-        return ShoeEntity.builder()
-                .type(type)
-                .manufacturer(manufacturer)
-                .size(size)
-                .build();
     }
 
     private void saveEntities(ManufacturerEntity... manufacturers) {

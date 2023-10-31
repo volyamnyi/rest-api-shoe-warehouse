@@ -19,5 +19,4 @@ public class ManufacturerEntity {
     @Id
     private Long id;
     private String name;
-
 }

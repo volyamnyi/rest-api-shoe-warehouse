@@ -17,5 +17,4 @@ public class ShoeDto {
     private String type;
     private ManufacturerDto manufacturer;
     private SizeDto size;
-
 }

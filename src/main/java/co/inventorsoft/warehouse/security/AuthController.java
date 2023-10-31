@@ -1,4 +1,4 @@
-package co.inventorsoft.warehouse.security.controller;
+package co.inventorsoft.warehouse.security;
 
 import co.inventorsoft.warehouse.security.dto.JwtRequestDto;
 import co.inventorsoft.warehouse.security.service.AuthService;
